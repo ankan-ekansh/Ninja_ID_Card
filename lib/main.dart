@@ -31,9 +31,12 @@ class _NinjaCardState extends State<NinjaCard> {
         onPressed: (){
           setState(() {
             // ninjaLevel+=1;
-            idx = idx + 1;
+            idx+=1;
             // print(idx);
-            if(idx > 6){
+            // if(idx > 6){
+            //   idx = 0;
+            // }
+            if(idx >= rankList.length){
               idx = 0;
             }
             currentRank = rankList[idx];
@@ -50,7 +53,7 @@ class _NinjaCardState extends State<NinjaCard> {
             Center(
               child: CircleAvatar(
                 backgroundImage: AssetImage('assets/naruto_ninja_id.png'),
-                radius: 90.0,
+                radius: 70.0,
               ),
               // child: Image.asset('assets/naruto_ninja_id.png'),
             ),
@@ -70,6 +73,28 @@ class _NinjaCardState extends State<NinjaCard> {
             ),
             Text(
               'Naruto Uzumaki',
+              style: TextStyle(
+                color: Colors.amberAccent[200],
+                letterSpacing: 2.0,
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold,
+              ),  
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            Text(
+              'VILLAGE',
+              style: TextStyle(
+                color: Colors.grey,
+                letterSpacing: 2.0,
+              ),  
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Text(
+              'Konohagakure',
               style: TextStyle(
                 color: Colors.amberAccent[200],
                 letterSpacing: 2.0,
